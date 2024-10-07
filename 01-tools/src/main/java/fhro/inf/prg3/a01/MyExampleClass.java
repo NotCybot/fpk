@@ -6,7 +6,6 @@ public class MyExampleClass {
 	 * @return product of a and b
 	 */
 	public int multiply(int a, int b) {
-		// TODO return correct multiplication result
-		return 0;
+		return a * b;
 	}
 }
