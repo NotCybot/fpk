@@ -1,0 +1,29 @@
+@startuml
+package javafx.fxml {
+    
+    interface Initializable {
+        +initialize(location: URL, resources: ResourceBundle ): void
+    }
+}
+
+package de.thro.inf.prg3.a06.controller {
+
+        +class ListViewUiController implements Initializable {
+
+            private btnAdd: Button
+            private btnDelete: Button
+            private bBox4Btns: HBox
+            private lblAddText: Label
+            private listBoxMain: ListView<String>
+            private titleLbl: Label;
+            private vBoxMain: VBox;
+            private txtAddItem: TextField
+            final listItems: ObservableList<String>
+
+            private addAction(action: ActionEvent ): void
+            private deleteAction(action: ActionEvent): void
+            private updateAction(action: ActionEvent): void
+            private searchAction(action: ActionEvent): void
+            public void initialize(URL url, ResourceBundle rb)
+    }
+@enduml

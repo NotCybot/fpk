@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="483.0" prefWidth="639.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.thro.inf.prg3.a06.controller.ListViewUiController">
+   <children>
+      <VBox fx:id="VBoxMain" alignment="TOP_CENTER" layoutX="132.0" layoutY="34.0" prefHeight="342.0" prefWidth="369.0">
+         <children>
+            <Label fx:id="TitleLbl" alignment="TOP_CENTER" prefHeight="26.0" prefWidth="165.0" text="ListView Example">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label text="Search a name" />
+            <HBox prefHeight="37.0" prefWidth="369.0">
+               <children>
+                  <TextField fx:id="searchField" prefHeight="26.0" prefWidth="312.0" text="Search a Name" />
+                  <Button fx:id="searchButton" mnemonicParsing="false" onAction="#searchAction" text="Search" />
+               </children>
+            </HBox>
+            <ListView fx:id="listViewBox" prefHeight="200.0" prefWidth="200.0" />
+            <Label id="TextLbl" fx:id="LblAddText" text="Enter Text" />
+            <TextField fx:id="txtAddItem" text="Enter a Name" />
+            <HBox id="HBox" fx:id="HBox4Btns" alignment="TOP_CENTER" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Button fx:id="BtnAdd" mnemonicParsing="false" onAction="#addAction" text="Add" />
+                  <Button fx:id="BtnDelete" mnemonicParsing="false" onAction="#deleteAction" text="Delete" />
+                  <Button fx:id="BtnUpdate" mnemonicParsing="false" onAction="#updateAction" text="Update" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
