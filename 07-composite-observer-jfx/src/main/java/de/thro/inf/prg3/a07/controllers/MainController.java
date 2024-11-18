@@ -37,6 +37,9 @@ public class MainController implements Initializable {
 	private Button btnRefresh;
 
 	@FXML
+	private Button btnClose;
+
+	@FXML
 	private ListView<String> mealsList;
 
 	@FXML
@@ -63,6 +66,7 @@ public class MainController implements Initializable {
 
 		chkVegetarian.selectedProperty().addListener((observable, oldValue, newValue) -> doUpdate(null));
 
+		btnClose.setOnAction(this::doClose);
 	}
 
 	private void doUpdate(ActionEvent actionEvent) {
@@ -72,8 +76,13 @@ public class MainController implements Initializable {
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
 		String today = sdf.format(new Date());
 
+		/**
+		 * Only works hardcoded
+		 */
+		String testDate = "2021-11-10";
+
 		System.out.println("Today: " + today);
-		api.getMeals(229, today).enqueue(new Callback<List<Meal>>() {
+		api.getMeals(229, testDate).enqueue(new Callback<List<Meal>>() {
 			@Override
 			public void onResponse(Call<List<Meal>> call, Response<List<Meal>> response) {
 				if (!response.isSuccessful() || response.body() == null) {
@@ -104,5 +113,10 @@ public class MainController implements Initializable {
 				System.out.println("No Meals today :(");
 			}
 		});
+	}
+private void doClose(ActionEvent actionEvent) {
+		//  implement close logic
+		System.out.println("Closing...");
+		Platform.exit();
 	}
 }
